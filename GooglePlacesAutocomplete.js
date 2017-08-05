@@ -596,12 +596,16 @@ export default class GooglePlacesAutocomplete extends Component {
     this.setState({
       listViewDisplayed: false
     });
+
+    this.onBlur();
   }
 
   _onFocus() {
     this.setState({
       listViewDisplayed: true
     });
+
+    this.onFocus();
   }
 
   _renderPoweredLogo() {
@@ -711,6 +715,8 @@ GooglePlacesAutocomplete.propTypes = {
   onPress: PropTypes.func,
   onNotFound: PropTypes.func,
   onFail: PropTypes.func,
+  onFocus: PropTypes.func,
+  onBlur: PropTypes.func,
   minLength: PropTypes.number,
   fetchDetails: PropTypes.bool,
   autoFocus: PropTypes.bool,
@@ -749,6 +755,8 @@ GooglePlacesAutocomplete.defaultProps = {
   onPress: () => {},
   onNotFound: () => {},
   onFail: () => {},
+  onFocus: () => {},
+  onBlur: () => {},
   minLength: 0,
   fetchDetails: false,
   autoFocus: false,
