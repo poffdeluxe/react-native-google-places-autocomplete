@@ -597,7 +597,7 @@ export default class GooglePlacesAutocomplete extends Component {
       listViewDisplayed: false
     });
 
-    this.onBlur();
+    this.props.onBlur();
   }
 
   _onFocus() {
@@ -605,7 +605,7 @@ export default class GooglePlacesAutocomplete extends Component {
       listViewDisplayed: true
     });
 
-    this.onFocus();
+    this.props.onFocus();
   }
 
   _renderPoweredLogo() {
